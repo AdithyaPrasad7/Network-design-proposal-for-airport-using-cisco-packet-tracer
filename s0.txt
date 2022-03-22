@@ -1,0 +1,160 @@
+
+Boot Sector Filesystem (bs:) installed, fsid: 3
+Parameter Block Filesystem (pb:) installed, fsid: 4
+
+
+Loading "flash:/2960-lanbasek9-mz.150-2.SE4.bin"...
+########################################################################## [OK]
+Smart Init is enabled
+smart init is sizing iomem
+                  TYPE      MEMORY_REQ
+                TOTAL:      0x00000000
+Rounded IOMEM up to: 0Mb.
+Using 6 percent iomem. [0Mb/512Mb]
+
+              Restricted Rights Legend
+Use, duplication, or disclosure by the Government is
+subject to restrictions as set forth in subparagraph
+(c) of the Commercial Computer Software - Restricted
+Rights clause at FAR sec. 52.227-19 and subparagraph
+(c) (1) (ii) of the Rights in Technical Data and Computer
+Software clause at DFARS sec. 252.227-7013.
+           cisco Systems, Inc.
+           170 West Tasman Drive
+           San Jose, California 95134-1706
+Cisco IOS Software, C2960 Software (C2960-LANBASEK9-M), Version 15.0(2)SE4, RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2013 by Cisco Systems, Inc.
+Compiled Wed 26-Jun-13 02:49 by mnguyen
+Initializing flashfs...
+fsck: Disable shadow buffering due to heap fragmentation.
+flashfs[2]: 2 files, 1 directories
+flashfs[2]: 0 orphaned files, 0 orphaned directories
+flashfs[2]: Total bytes: 32514048
+flashfs[2]: Bytes used: 11952128
+flashfs[2]: Bytes available: 20561920
+flashfs[2]: flashfs fsck took 2 seconds.
+flashfs[2]: Initialization complete....done Initializing flashfs.
+Checking for Bootloader upgrade..
+Boot Loader upgrade not required (Stage 2)
+POST: CPU MIC register Tests : Begin
+POST: CPU MIC register Tests : End, Status Passed
+POST: PortASIC Memory Tests : Begin
+POST: PortASIC Memory Tests : End, Status Passed
+Press RETURN to get started!
+
+
+%LINK-5-CHANGED: Interface FastEthernet0/1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to up
+
+%LINK-5-CHANGED: Interface FastEthernet0/2, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to up
+
+%LINK-5-CHANGED: Interface FastEthernet0/3, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/3, changed state to up
+
+%LINK-5-CHANGED: Interface FastEthernet0/4, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/4, changed state to up
+
+%LINK-5-CHANGED: Interface FastEthernet0/5, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/5, changed state to up
+
+%LINK-5-CHANGED: Interface FastEthernet0/6, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/6, changed state to up
+
+%LINK-5-CHANGED: Interface FastEthernet0/7, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/7, changed state to up
+
+
+Switch>enable
+Switch#
+Switch#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#interface FastEthernet0/1
+Switch(config-if)#ip address 192.168.2.1 255.255.255.0
+                      ^
+% Invalid input detected at '^' marker.
+	
+Switch(config-if)#ip address ?
+% Unrecognized command
+Switch(config-if)#ip ?
+  arp   Configure ARP features
+  dhcp  Configure DHCP parameters for this interface
+Switch(config-if)#ex
+Switch(config)#vlan 2
+Switch(config-vlan)#name AirportAuthority
+Switch(config-vlan)#ex
+Switch(config)#vlan 3
+Switch(config-vlan)#fsp
+                    ^
+% Invalid input detected at '^' marker.
+	
+Switch(config-vlan)#name fsp
+Switch(config-vlan)#ex
+Switch(config)#vlan 4
+Switch(config-vlan)#name guest
+Switch(config-vlan)#ex
+Switch(config)#
+Switch(config)#end
+Switch#vlan database
+            ^
+% Invalid input detected at '^' marker.
+	
+Switch#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Switch#en
+Switch#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#int range fa0/2-6
+Switch(config-if-range)#switchport access vlan 2
+Switch(config-if-range)#ex
+Switch(config)#
+Switch(config)#interface FastEthernet0/2
+Switch(config-if)#%SPANTREE-2-RECV_PVID_ERR: Received 802.1Q BPDU on non trunk FastEthernet0/7 VLAN1.
+
+%SPANTREE-2-BLOCK_PVID_LOCAL: Blocking FastEthernet0/7 on VLAN0001. Inconsistent port type.
+
+
+Switch(config-if)#exit
+Switch(config)#interface FastEthernet0/2
+Switch(config-if)#
+Switch(config-if)#exit
+Switch(config)#interface FastEthernet0/7
+Switch(config-if)#
+Switch(config-if)#switchport mode trunk
+
+Switch(config-if)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/7, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/7, changed state to up
+
+Switch(config-if)#
+Switch(config-if)#switchport trunk allowed vlan remove 1
+Switch(config-if)#
+Switch(config-if)#
+Switch(config-if)#switchport trunk allowed vlan add 1
+Switch(config-if)#
+
+
+
+
+
+
+
+
+Switch con0 is now available
+
+
+
+
+
+
+Press RETURN to get started.
