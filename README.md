@@ -13,10 +13,10 @@ The wireless access should be using a common password. The guest users should no
 
 ## Networking Requirement:-
 
-1.The active networking components (Routers, switches, wireless access points etc) with quantity.
-2.The IP network design for each department.
-3.Creating and mapping IP networks with vlans.
-4.Analysis, identification and explanation of methodologies to use for access restriction and internet sharing.
-5.Dynamic IP addressing design for all the networks.
-6.Identify the configuration and features, wherever appropriate, which is required on the active components to setup the network.
-7.Network topology diagram.
+>1.The active networking components (Routers, switches, wireless access points etc) with quantity.
+>2.The IP network design for each department.
+>3.Creating and mapping IP networks with vlans.
+>4.Analysis, identification and explanation of methodologies to use for access restriction and internet sharing.
+>5.Dynamic IP addressing design for all the networks.
+>6.Identify the configuration and features, wherever appropriate, which is required on the active components to setup the network.
+>7.Network topology diagram.
